@@ -26,6 +26,8 @@ alias boom="rm -rf ~/.gradle/caches/build-cache-1 && ./gradlew clean --quiet"
 alias killjava="pkill -9 java"
 alias scan="./gradlew :app:dependencies --scan > ~/Desktop/dependencies.txt"
 
+
+# Functions
 compressvideo() {
     # 1. Check if ffmpeg is actually installed
     if ! command -v ffmpeg &> /dev/null; then
@@ -55,11 +57,10 @@ compressvideo() {
     ffmpeg -i "$input_file" -c:v libx264 -crf 28 -preset fast -c:a copy "$output_file"
 }
 
+
+# Export environment variables
 export ANDROID_SDK_ROOT="~/Android/Sdk"
 export ANDROID_HOME="~/Android/Sdk"
 export ANDROID_AVD_HOME="~/.android/avd" 
 
-export PATH=$PATH:$ANDROID_HOME/platform-tools
-export PATH=$PATH:$ANDROID_HOME/emulator
-export PATH=$PATH:$ANDROID_HOME/tools
-export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools:$ANDROID_HOME/emulator:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin
