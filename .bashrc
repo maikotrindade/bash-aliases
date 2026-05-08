@@ -70,6 +70,7 @@ help() {
     echo ""
 }
 
+# requires: ffmpeg (https://ffmpeg.org/download.html)
 compressvideo() {
     # 1. Check if ffmpeg is actually installed
     if ! command -v ffmpeg &> /dev/null; then
