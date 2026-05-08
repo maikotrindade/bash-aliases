@@ -37,6 +37,39 @@ alias scan="./gradlew :app:dependencies --scan > ~/logs/dependencies.txt"
 ########################################
 # Functions
 ########################################
+help() {
+    echo ""
+    echo "=== Misc ==="
+    echo "  ll            ls -alF"
+    echo "  la            ls -A"
+    echo "  l             ls -CF"
+    echo "  cls           clear"
+    echo ""
+    echo "=== Git ==="
+    echo "  gc            git commit"
+    echo "  gck           git commit --no-verify"
+    echo "  ga            git add"
+    echo "  gs            git status"
+    echo "  gr            git restore --staged ."
+    echo "  gmd           git fetch origin develop && merge"
+    echo "  revertLast    git reset --soft HEAD~1"
+    echo ""
+    echo "=== Android ==="
+    echo "  adbtcp        adb tcpip 5555"
+    echo "  adbconnect    adb connect 10.0.0.171:5555"
+    echo "  adbkill       adb kill-server && adb devices"
+    echo "  startemulator start Pixel 9 Pro XL emulator"
+    echo "  mirror        scrcpy stream (2M, 800px)"
+    echo "  boom          clear gradle build cache"
+    echo "  killjava      pkill -9 java"
+    echo "  scan          gradle dependency scan to ~/logs"
+    echo ""
+    echo "=== Functions ==="
+    echo "  compressvideo <input> [output]   compress video with ffmpeg"
+    echo "  help                             show this help"
+    echo ""
+}
+
 compressvideo() {
     # 1. Check if ffmpeg is actually installed
     if ! command -v ffmpeg &> /dev/null; then
