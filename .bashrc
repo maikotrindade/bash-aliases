@@ -1,4 +1,6 @@
+########################################
 # Misc aliases
+########################################
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
@@ -7,7 +9,9 @@ alias la="ls -A"
 alias l="ls -CF"
 alias cls="clear"
 
+########################################
 # Git aliases
+########################################
 alias gc="git commit"
 alias gck="git commit --no-verify"
 alias ga="git add"
@@ -16,7 +20,10 @@ alias gr="git restore --staged ."
 alias gmd="git fetch origin develop && git merge origin/develop"
 alias revertLast="git reset --soft HEAD~1"
 
-# Android development aliases
+########################################
+# Android development aliases 
+#   it requeres sdk tools to be in the PATH
+########################################
 alias adbtcp="adb tcpip 5555"
 alias adbconnect="adb connect 10.0.0.171:5555"
 alias adbkill="adb kill-server && adb devices"
@@ -24,10 +31,12 @@ alias startemulator="emulator -avd Pixel_9_Pro_XL.avd &"
 alias mirror="scrcpy --video-bit-rate 2M --max-size 800"
 alias boom="rm -rf ~/.gradle/caches/build-cache-1 && ./gradlew clean --quiet"
 alias killjava="pkill -9 java"
-alias scan="./gradlew :app:dependencies --scan > ~/Desktop/dependencies.txt"
+alias scan="./gradlew :app:dependencies --scan > ~/logs/dependencies.txt"
 
 
+########################################
 # Functions
+########################################
 compressvideo() {
     # 1. Check if ffmpeg is actually installed
     if ! command -v ffmpeg &> /dev/null; then
@@ -58,7 +67,9 @@ compressvideo() {
 }
 
 
+########################################
 # Export environment variables
+########################################
 export ANDROID_SDK_ROOT="~/Android/Sdk"
 export ANDROID_HOME="~/Android/Sdk"
 export ANDROID_AVD_HOME="~/.android/avd" 
